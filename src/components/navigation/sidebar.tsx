@@ -359,24 +359,6 @@ export function Sidebar() {
           </button>
         </div>
 
-        {/* Role Pill Banner */}
-        <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-zinc-800 dark:bg-zinc-950/60">
-          <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-zinc-500">
-            Current Workspace
-          </div>
-          <div className="mt-1.5 flex items-center gap-2">
-            <span
-              className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-semibold capitalize ${
-                roleBadgeColors[roleName] ||
-                "bg-slate-200 text-slate-700 border-slate-300 dark:bg-zinc-800 dark:text-zinc-300"
-              }`}
-            >
-              <span>{roleBadgeIcons[roleName] || "👤"}</span>
-              {roleName} Portal
-            </span>
-          </div>
-        </div>
-
         {/* Navigation list */}
         <nav className="mt-4 flex-1 space-y-1 overflow-y-auto">
           {navLinks.map((link) => {
@@ -479,44 +461,6 @@ export function Sidebar() {
             </button>
           )}
         </div>
-
-        {/* Pinned Active Role Indicator */}
-        {!sidebarCollapsed ? (
-          <div className="shrink-0 mt-5 rounded-2xl border border-slate-200/80 bg-slate-50/80 p-3 dark:border-zinc-800 dark:bg-zinc-950/50">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-zinc-500">
-                Active Role
-              </span>
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20 animate-pulse" />
-            </div>
-            <div className="mt-2 flex items-center gap-2">
-              <span
-                className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-semibold capitalize ${
-                  roleBadgeColors[roleName] ||
-                  "bg-slate-200 text-slate-700 border-slate-300 dark:bg-zinc-800 dark:text-zinc-300"
-                }`}
-              >
-                <span>{roleBadgeIcons[roleName] || "👤"}</span>
-                {roleName} Portal
-              </span>
-            </div>
-          </div>
-        ) : (
-          <div className="shrink-0 mt-4 flex justify-center">
-            <div
-              className={`group relative flex h-8 w-8 items-center justify-center rounded-xl border text-sm font-semibold cursor-default ${
-                roleBadgeColors[roleName] ||
-                "bg-slate-200 text-slate-700 border-slate-300 dark:bg-zinc-800 dark:text-zinc-300"
-              }`}
-            >
-              <span>{roleBadgeIcons[roleName] || "👤"}</span>
-              <div className="pointer-events-none absolute left-full ml-3 hidden rounded-xl bg-slate-900 px-2.5 py-1 text-xs font-medium text-white shadow-xl whitespace-nowrap group-hover:block dark:bg-zinc-800 dark:text-zinc-100 z-50">
-                Active: {roleName} Portal
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Independently Scrollable Navigation Links */}
         <nav
           className={`mt-5 flex-1 min-h-0 overflow-y-auto space-y-1.5 pr-0.5 ${sidebarCollapsed ? "flex flex-col items-center" : ""}`}
