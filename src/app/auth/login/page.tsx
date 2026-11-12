@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { authApi } from '@/services/auth';
 import { ApiError } from '@/types/api.type';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -219,14 +220,17 @@ export default function LoginPage() {
             <span className="text-lg font-bold text-zinc-900 dark:text-zinc-50">BookFlow</span>
           </div>
 
-          <div className="ml-auto text-xs text-zinc-500 dark:text-zinc-400">
-            Don&apos;t have an account?{' '}
-            <Link
-              href="/auth/register"
-              className="font-semibold text-blue-600 hover:text-blue-500 hover:underline dark:text-blue-400"
-            >
-              Sign up
-            </Link>
+          <div className="ml-auto flex items-center gap-3">
+            <ThemeToggle />
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">
+              Don&apos;t have an account?{' '}
+              <Link
+                href="/auth/register"
+                className="font-semibold text-blue-600 hover:text-blue-500 hover:underline dark:text-blue-400"
+              >
+                Sign up
+              </Link>
+            </div>
           </div>
         </div>
 
