@@ -139,15 +139,15 @@ export default function DashboardPage() {
               </svg>
               New Appointment
             </Link>
-            <button
-              onClick={() => alert('Quick patient registration form will open here.')}
+            <Link
+              href="/dashboard/patients?action=new"
               className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-blue-500/20 hover:bg-blue-700 transition-colors cursor-pointer"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
               </svg>
               Register Patient
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -272,9 +272,17 @@ export default function DashboardPage() {
         <div className="rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-xs dark:border-zinc-800 dark:bg-zinc-900/60 dark:shadow-none transition-colors lg:col-span-2">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                Today&apos;s Clinical Queue & Schedule
-              </h3>
+              <div className="flex items-center gap-2">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  Today&apos;s Clinical Queue & Schedule
+                </h3>
+                <Link
+                  href="/dashboard/patients"
+                  className="rounded-lg bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-600 hover:bg-blue-100 dark:bg-blue-950/40 dark:text-blue-400 dark:hover:bg-blue-900/50 transition-colors"
+                >
+                  Manage Directory &rarr;
+                </Link>
+              </div>
               <p className="text-xs text-slate-500 dark:text-zinc-400">
                 Real-time patient flow and appointment statuses
               </p>

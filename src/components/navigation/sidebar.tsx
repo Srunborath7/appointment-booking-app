@@ -61,7 +61,7 @@ export function Sidebar() {
     },
     {
       name: "Patients",
-      href: "/dashboard#patients",
+      href: "/dashboard/patients",
       icon: (
         <svg
           className="h-5 w-5"
@@ -129,7 +129,7 @@ export function Sidebar() {
     },
     {
       name: "Add Patient",
-      href: "/dashboard#add-patient",
+      href: "/dashboard/patients/new",
       icon: (
         <svg
           className="h-5 w-5"
