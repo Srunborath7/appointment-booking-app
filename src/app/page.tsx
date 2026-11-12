@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { getUser, getUserRole, canAccessDashboard, clearAuthSession } from '@/lib/session';
 import { User } from '@/types/auth.type';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 
 export default function Home() {
   const router = useRouter();
@@ -45,6 +46,7 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             {mounted && currentUser ? (
               <div className="flex items-center gap-3">
                 <div className="hidden sm:flex flex-col text-right">
