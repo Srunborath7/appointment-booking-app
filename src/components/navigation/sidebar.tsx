@@ -254,8 +254,8 @@ export function Sidebar() {
       ),
     },
     {
-      name: "Partners & Facility",
-      href: "/dashboard#facility",
+      name: "Facility & 3D Rooms",
+      href: "/dashboard/rooms",
       icon: (
         <svg
           className="h-5 w-5"
